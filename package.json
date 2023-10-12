@@ -1,0 +1,24 @@
+{
+  "name": "chat-socket",
+  "version": "1.0.0",
+  "description": "chat con socket.io",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "cristian": "npm run dev"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "socketio"
+  ],
+  "author": "Cristian",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "socket.io": "^4.7.2"
+  },
+  "devDependencies": {
+    "color": "^4.2.3"
+  }
+}
