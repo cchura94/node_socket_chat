@@ -6,11 +6,27 @@
     <title>CHAT</title>
 </head>
 <body>
-    <h1>SOCKET IO FRONTEND</h1>  
+    <h1>SOCKET IO FRONTEND</h1> 
+    <ul id="mensajes"></ul>
+
+    <input type="text" id="mensaje"> 
+    <button onclick="enviarMensaje()">Enviar Mensaje</button>
     
     <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
     <script>
     var socket = io();
+
+    function enviarMensaje(){
+        let miMensaje = document.getElementById('mensaje').value;
+        socket.emit('mi-chat', miMensaje)
+    }
+
+    socket.on('mi-chat', function(msg){
+        console.log(msg)
+        let val = document.getElementById("mensajes").innerHTML;
+        document.getElementById("mensajes").innerHTML = `${val}<li>${msg}</li>`
+    })
+
     </script>
 </body>
 </html>
